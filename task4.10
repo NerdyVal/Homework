@@ -1,0 +1,23 @@
+import string
+
+def up(cat, dog = string.ascii_lowercase, rat = string.ascii_uppercase):
+    strt =''
+    for i in range(len(cat)):
+        if cat[i] in dog:
+            strt += cat[i].swapcase()
+        elif cat[i] in rat:
+            strt += cat[i]
+        else:
+            strt += cat[i]
+    return strt
+
+def down(cat):
+    return up(cat, string.ascii_uppercase, string.ascii_lowercase)
+
+def mirr(cat):
+    return up(cat, string.ascii_letters)
+
+a = input()
+print(up(a))
+print(down(a))
+print(mirr(a))
