@@ -1,3 +1,4 @@
+#! python
 import string
 
 def up(cat, dog = string.ascii_lowercase, rat = string.ascii_uppercase):
