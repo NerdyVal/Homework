@@ -1,24 +1,17 @@
 #! python
 import string
 
-def up(cat, dog = string.ascii_lowercase, rat = string.ascii_uppercase):
-    strt =''
-    for i in range(len(cat)):
-        if cat[i] in dog:
-            strt += cat[i].swapcase()
-        elif cat[i] in rat:
-            strt += cat[i]
-        else:
-            strt += cat[i]
-    return strt
+def up(word, case = string.ascii_lowercase):
+    result = ''
+    for letter in word:
+        result += letter.swapcase() if letter in case else letter
+    return result
 
-def down(cat):
-    return up(cat, string.ascii_uppercase, string.ascii_lowercase)
+def down(word):
+    return up(word, string.ascii_uppercase)
 
-def mirr(cat):
-    return up(cat, string.ascii_letters)
+def mirr(word):
+    return up(word, string.ascii_letters)
 
-a = input()
-print(up(a))
-print(down(a))
-print(mirr(a))
+str = input()
+print(up(str), down(str), mirr(str), sep='\n')
