@@ -1,0 +1,13 @@
+#! python
+from itertools import zip_longest
+a=[]
+b=[]
+while True:
+    n=int(input())
+    if n==0:
+        break
+    if n%2==0:
+        a.append(n)
+    else:
+        b.append(n)
+print(*zip_longest(a, b, fillvalue=' '), sep='\n')
